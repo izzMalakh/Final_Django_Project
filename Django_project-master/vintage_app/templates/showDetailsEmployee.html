@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Emplyee Deails</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-image: linear-gradient(to right, #8c004b, #dcd8d8); 
+            padding: 30px;
+        }
+        #div1{
+            width: 40%;
+            background-color: antiquewhite;
+            margin: 0 auto;
+            margin-top: 70px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 0px 10px 0px;
+            
+        }
+        #div{
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 40%;
+            background-color: antiquewhite;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 0px 10px 0px;
+        }
+       
+        .head{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+    <a href="/showallEmployees"> Back to the previous page </a>
+    <a href="/adminDashboard"> Back to DashBoard </a>
+</div>
+    <div id="div1">
+    <h1> Full Name: {{emp.first_name}} {{emp.last_name}}</h1>
+    <h2> ID number : {{emp.id_number}}</h2>
+    <h2> Phone Number: {{ emp.phone_number }}</h2>
+    <h3> Working hours: {{emp.working_hours}} </h3>
+    <h3> Salary per Day: {{emp.salary}} NIS</h3>
+    <h3> Salary per Month: {{empm}} NIS </h3>
+    <h3> Age: {{emp.age}} </h3>
+    <h3> Position: {{emp.position}}</h3>
+    <h3> Started Work in: {{emp.started_date}} </h3>
+    <h3> Current situation: {{emp.current_situation}}</h3>
+    <h3> Created at: {{emp.created_at}} </h3>
+    <h3> Edited at: {{emp.updated_at}} </h3>
+</div>
+<div id="div">
+<a href="#">Print Card</a> (Not Available Now)
+</div>
+</body>
+</html>

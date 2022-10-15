@@ -1,0 +1,136 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+      body{
+        padding: 30px;
+        
+      }
+    </style>
+    
+<!-- </head>
+<body> -->
+        <div style="display: flex;justify-content: space-between;">
+            <a href="/adminDashboard">Back to Dashboard</a>
+        <a href="/">Go to home</a>
+        
+    </div>
+    <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add employee</title> -->
+    <section id="chefs" class="chefs">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            
+            <h2>Add Employee</h2>
+            <h5 class="text-success "></h5>
+          </div>
+  
+          <form  action='/addemployee' method='post'>
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First name"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last name"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="idnumber" class="form-control" id="idnum" placeholder="ID number"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone Number"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="workinghours" class="form-control" id="workH" placeholder="working hours"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="salary" class="form-control" id="salary" placeholder="salary"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="text" name="age" class="form-control" id="age" placeholder="Age"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <input type="date" name="started_date" class="form-control" id="start" placeholder="Started Date"  >
+                <div class="validate"></div>
+              </div>
+              <div class="col-lg-4 col-md-6 form-group">
+                <select style="height: 38px; width: 200px;" name="positionselect" id="positionselect"> 
+                    <option value="Chef">Chef</option>
+                    <option value="Parista">Parista</option>
+                  </select>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" name="currentsituation" class="form-control" id="situation" placeholder="Current Situation"  >
+                <div class="validate"></div>
+              </div>
+            <div class="text-center" style="margin: 0 auto;" ><button style="background-color: #ffffff; height: 44px; width: 70px; border-radius: 20px;"
+                type="submit">Add </button></div>
+            
+          </form>
+      </section> 
+      {% if messages %}
+      {% for message in messages %}
+      <p style="width: 25%; margin:0 auto; margin-bottom:10px;" {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+          {{ message }}
+      </p>
+      {% endfor %}
+      {% endif %}
+      <table id="employeeTable"class="table caption-top">
+        <caption>List of employees</caption>
+        <thead>
+          <tr>
+            
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">ID Number</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Working Hours</th>
+            <th scope="col">Salary Per Day</th>
+            <th scope="col">Age</th>
+            <th scope="col">Position</th>
+            
+            
+            <th scope="col">Created_at</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for employee in em %}
+          {% if employee.is_deleted == True %}
+          <tr>
+            <td>{{employee.first_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.id_number}}</td>
+            <td>{{employee.phone_number}}</td>
+            <td>{{employee.working_hours}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.position}}</td>
+            <td>{{employee.created_at}}</td>
+            <td><a href="/editEmployee/{{employee.id}}">Edit</a> / <a href="/restoreEmployee/{{employee.id}}">Restore</a> /</td>
+          </tr>
+          {% endif %}
+          {%endfor%}
+        </tbody>
+      </table>

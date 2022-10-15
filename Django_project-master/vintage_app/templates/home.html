@@ -1,0 +1,909 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Vintage</title>
+
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  
+
+  <!-- Template Main JS File -->
+  <!-- <script src="{% static 'js/main.js' %}"></script> -->
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <!-- Template Main JS File -->
+    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-phone d-flex align-items-center"><span>00970598443134</span></i>
+        <i class="bi bi-clock d-flex align-items-center ms-4"><span> Everyday - 9AM - 23PM</span></i>
+      </div>
+
+     
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a id="vin" href="index.html">VINTA<span id="g">G</span>E</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="#book-a-table">Events</a></li>
+          <li><a class="nav-link scrollto" href="#">Find Job</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          
+          <!-- <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">User</a></li> -->
+              
+
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul> -->
+                  <!-- <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li> -->
+                <!-- </ul> -->
+              <!-- </li> -->
+              <!-- <li><a href="#">User</a></li> -->
+              <!-- <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li> -->
+            <!-- </ul>
+          </li> -->
+          {%if request.session.name_of_user%}
+          <li><a class="nav-link scrollto" href="/logout">logout</a></li>
+          <li><a href="/ManageAccount/{{request.session.id_of_user}}"> Account </a></li>
+          {%else%}
+          <li><a class="nav-link scrollto" href="/login">Speacial Users</a></li>
+          {%endif%}
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      {%if request.session.name_of_user%}
+      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+      {%else%}
+      <a href="/login" class="book-a-table-btn scrollto d-none d-lg-flex"> Login to book a table</a>
+      {%endif%}
+      
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero"  class="d-flex align-items-center" >
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          {%if request.session.name_of_user%}
+          <h1>Hey {{request.session.name_of_user}}</h1>
+          {%endif%}
+          <h1>Welcome to <span style="font-size: 4rem;">VINTA<span style="color: red;">G</span>E</span></h1>
+          <h2>Artfully designed cafe in the heart of Ramallah</h2>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            {%if request.session.name_of_user%}
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+            {%else%}
+            <a href="/error" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.extra_tags == "wrong" %}
+            <p style="width:32%; margin-top:10px;" {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+                {{ message }}
+            </p>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {%endif%}
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=uPgm0LTelcE" class="glightbox play-btn"></a>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about" >
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+             
+            <img src="{% static 'img/ameer.PNG' %}" />
+              <!-- <img src="assets/img/bta.png" alt=""> -->
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Artfully designed cafe in the heart of Ramallah at the Royal Court Boutique Hotel with a beautiful </h3>
+            
+            <ul>
+              <li><i style="color: #c400b2;" class="bi bi-check-circle"></i> New Terrace</li>
+              <li><i style="color: #c400b2;" class="bi bi-check-circle"></i> Sushi</li>
+              <li><i style="color: #c400b2;" class="bi bi-check-circle"></i> Delicious cafe style food</li>
+            </ul>
+            <p>
+              The Hotel conveniently provides its guests with one of the most popular 
+              cafes in the heart of Ramallah with an amazing street view terrace. 
+              Vintage Café is known for its great food and unique design. Whether 
+              catching up with a friend over coffee or having a night out for Sushi 
+              and cocktails, there is enough variety on the menu and seating to make it a great experience.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <!-- <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Why Us</h2>
+          <p>Why Choose Our Restaurant</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+              <span>01</span>
+              <h4>Lorem Ipsum</h4>
+              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="200">
+              <span>02</span>
+              <h4>Repellat Nihil</h4>
+              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="300">
+              <span>03</span>
+              <h4> Ad ad velit qui</h4>
+              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Why Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Menu</h2>
+          <p>Check Our Tasty Menu</p>
+        </div>
+        {%if request.session.name_of_user%}
+        <div style="width: 10%; margin: 0 auto; margin-bottom: 20px;">
+        <a id="aa" href="/ordernow" > New Order </a>
+      </div>
+        {%endif%}
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            
+            <ul id="menu-flters">
+              
+              <li data-filter="*" class="filter-active">All</li>
+              
+              {%if hotdrinks%}
+              <li data-filter=".filter-hot">Hot Drinks</li>
+              {%endif%}
+              {%if softdrinks%}
+              <li  data-filter=".filter-soft">Soft Drinks</li>
+              {%endif%}
+              {%if sparklings%}
+              <li data-filter=".filter-sparklings">Sparklings</li>
+              {%endif%}
+
+              {%if iced%}
+              <li data-filter=".filter-iced">Iced Drinks</li>
+              {%endif%}
+              {%if drinks%}
+              <li data-filter=".filter-drinks">Drinks</li>
+              {%endif%}
+              {%if milkshakes%}
+              <li data-filter=".filter-shakes">Milkshakes</li>
+              {%endif%}
+              {%if conktails%}
+              <li data-filter=".filter-cocktails">Cocktails</li>
+              {%endif%}
+              {%if starter%}
+              <li data-filter=".filter-Starter">Starter</li>
+              {%endif%}
+              {%if salad%}
+              <li data-filter=".filter-salad">Salad</li>
+              {%endif%}
+              {%if mainMeals%}
+              <li data-filter=".filter-main">Main Course</li>
+              {%endif%}
+              {%if Chinese%}
+              <li data-filter=".filter-Chinese">Chinese</li>
+              {%endif%}
+              {%if breakfast%}
+              <li data-filter=".filter-breakfast">Breakfast</li>
+              {%endif%}
+              {% if specialty%}
+              <li data-filter=".filter-specialty">Most requested</li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+        
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+          
+          {% for j in softdrinks%}
+          {% if j not in specialty %}
+          <div class="col-lg-6 menu-item filter-soft">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+ 
+          {% for j in hotdrinks%}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-hot">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+          
+          {% for j in sparklings%}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-sparklings">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+
+        
+          {% for j in IcedDrinks%}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-iced">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+
+           
+          {% for j in drinks%}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-drinks">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+
+         
+          {% for j in Milkshakes %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-shakes">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+
+           
+          {% for j in cocktails %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-cocktails">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+           
+          </div>
+          {% endif %}
+          {% endfor %}
+
+       
+          {% for j in Starter %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-Starter">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+
+        
+          {% for j in salad %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-salad">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+
+           
+          {% for j in mainMeals %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-main">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+
+           
+          {% for j in Chinese %}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-Chinese">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+          
+          {% for j in breakfast%}
+          {% if j not in specialty|slice:'1:4' %}
+          <div class="col-lg-6 menu-item filter-breakfast">
+            {% if j.image %}
+            <img src="{{ j.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{j.name}}</a><span>{{j.price}} NIS</span>
+              
+            </div>
+            
+            <div class="menu-ingredients">
+              {{j.description}}
+            </div>
+            
+          </div>
+          {% endif %}
+          {% endfor %}
+
+          {% for i in specialty|slice:"1:4" %}
+      
+          <div class="col-lg-6 menu-item filter-specialty">
+            {% if i.image %}
+            <img src="{{ i.image.url }}" class="menu-img" alt="">
+            {% endif %}
+            <div class="menu-content">
+              <a href="#">{{i.name}}</a><span>{{i.price}} NIS</span>
+            </div>
+            <div class="menu-ingredients">
+              {{i.description}}
+            </div>
+            
+          </div>
+          {% endfor %}
+          </div>
+      </div>
+      </div>
+      
+   
+      
+    </section>
+    <!-- End Menu Section -->
+   
+
+    
+
+    {%if request.session.name_of_user%}
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Reservation</h2>
+          <p>Book a Table</p>
+          
+       
+        </div>
+        <div style="display: flex;">
+         
+        <form action="/bookTable" method="post" >
+          {%csrf_token%}
+          <div class="row"  >
+            
+            <div class="php-email-form" class="col-lg-4 col-md-6 form-group">
+              <input style="width: 100%; margin-bottom: 15px;" type="number" name="number_of_persons" class="form-control"  placeholder="Number of Persons" >
+              <div></div>
+            </div>
+            <div class="php-email-form" class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input style="width: 100%;margin-bottom: 15px;" type="text" class="form-control" name="date" placeholder="Date" >
+              <div ></div>
+            </div>
+            <div class="php-email-form" class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input style="width: 100%;margin-bottom: 15px;" type="number" class="form-control" name="numberofHours"  placeholder="Number of hours">
+              <div ></div>
+            </div>
+            <div class="php-email-form" class="col-lg-4 col-md-6 form-group mt-3">
+              <input style="width: 100%;margin-bottom: 20px;" type="text" name="occassion" class="form-control"  placeholder="occassion" >
+              <div></div>
+            </div>
+            
+            
+          </div>
+          <div class="php-email-form" class="form-group mt-3">
+            <textarea style="width: 100%;" class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div></div>
+          </div>
+         
+          <div style="width: 60%; " ><button style="background-color: black; width:50%; border:1px solid #a49b89; color:white; margin-top: 10px;"
+             type="submit">Book a Table</button></div>
+             {% if messages %}
+             {% for message in messages %}
+             {% if message.extra_tags == "number_of_persons" %}
+             <p style="margin-top:10px ;" {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+                 {{ message }}
+             </p>
+             {%endif%}
+             {% endfor %}
+             {% endif %}
+             {% if messages %}
+             {% for message in messages %}
+             {% if message.extra_tags == "number_of_hours" %}
+             <p {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+                 {{ message }}
+             </p>
+             {%endif%}
+             {% endfor %}
+             {% endif %}
+             {% if messages %}
+             {% for message in messages %}
+             {% if message.extra_tags == "succc" %}
+             <p {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+                 {{ message }}
+             </p>
+             {%endif%}
+             {% endfor %}
+             {% endif %}
+
+        </form>
+<img src="../static/img/stand.png" width="450px" height="367px" style="clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%);" alt="stand">
+</div>
+      </div>
+    </section>
+
+    <!-- End Book A Table Section -->
+    {%endif%}
+
+    <!-- ======= Testimonials Section ======= -->
+
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Reviews</h2>
+          <p>Leave Message to our Team without sharing your Name!</p>
+          {%if request.session.name_of_user%}
+          <form action="/sendmessage/{{request.session.id_of_user}}" method="post">
+            {% csrf_token %}
+          <textarea class="form-control" name="message" id="mess" cols="30" rows="8" required></textarea>
+          <div style="width: 20%; margin:0 auto;">
+          <button style="background-color: #cda45e; height: 40px; margin-top: 15px; width: 100%;" type="submit"> Send Message </button>
+        </div>
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.extra_tags == "succ" %}
+        <p style="color: green; font-size: 1.3rem; margin-top: 10px;" {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+            {{ message }}
+        </p>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+          {%else%}
+          
+          <p style="color: white;">Please <a href="/signup">sign up</a> or <a href="/login">login</a> to leave a private message to Manager</p>
+          {%endif%}
+        </div>
+<!-- 
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    
+    <!-- End Gallery Section -->
+
+    <!-- ======= Chefs Section ======= -->
+    
+    <!-- End Chefs Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+      </div>
+
+      <!-- <div data-aos="fade-up">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div> -->
+      <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=1324&amp;height=400&amp;hl=en&amp;q=Royal Court Hotel Ramallah&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpenation.com/">Minecraft Website</a></div><style>.mapouter{position:relative;text-align:right;width:1530px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:1530px;height:400px;}.gmap_iframe {width:1530px!important;height:400px!important;}</style></div>
+      <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>W622+G49, Ramallah</p>
+              </div>
+
+              <div class="open-hours">
+                <i class="bi bi-clock"></i>
+                <h4>Open Hours:</h4>
+                <p>
+                  Sunday-Saturday:<br>
+                  11:00 AM - 23:00 PM
+                </p>
+              </div>
+
+              <!-- <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div> -->
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>00970598443134</p>
+                Or You Can Cotact with Manager via email <a href="mailto:izzaldeenjamal@gmail.com"> Click Here </a>
+              </div>
+
+            </div>
+
+          </div>
+
+         
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3 style="font-size: 3rem;">VINTA<span style="color: red;">G</span>E</h3>
+              <p>
+                Yafa Street <br>
+                Palestine, Ramallah<br><br>
+                
+              </p>
+              <div class="social-links mt-3">
+                <br>
+                <a href="https://www.facebook.com/VintageCafeRamallah" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/vintagecafemgm" class="instagram"><i class="bx bxl-instagram"></i></a>
+                
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#menu">MENU</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.rcshotel.com/">Royal Hotel</a></li>
+              
+            </ul>
+          </div>
+
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div> -->
+
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Search</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Vintage</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+        Designed by OutofCharging Team
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

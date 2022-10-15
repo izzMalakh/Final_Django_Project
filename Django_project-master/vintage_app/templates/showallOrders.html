@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All orders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+  <header id="header" >
+    <div>
+
+      <h1 class="logo me-auto me-lg-0"><a id="vin" >VINTA<span id="g">G</span >E</a><span  class="font-effect-outline" style="font-family:'Sofia'; font-style: italic; color:red ; margin-left: 10px;">Mange Orders </span> </h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+     
+        
+    </header>
+        <div style="background-color: rgb(168, 168, 168); display: flex; justify-content: space-around;">
+        <a href="/adminDashboard">Back to Dashboard</a>
+        <a href="/">Go to home</a></div>
+      </div>
+      <div style="background-color: rgb(168, 168, 168); text-align: center; margin-top: 5px;">
+        <p style="font-size: 1.2rem;">Unapproved Table</p>
+      </div>
+      <div>
+            <div>
+    <table class="table table-sm" style="margin-right: 100px;">
+     
+        <thead>
+          <tr>
+            <th scope="col">Process</th>
+            <th scope="col">Order</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total price</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Created_at</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {%for i in carts reversed%}
+            {% if i.order.process == False %}
+          <tr>
+            <!-- فيوتشر وورك : كل يوم يعمل رستارت للاي دي -->
+            <td>{{i.order.process}}</td>
+            <td>{{i.meal.name}}</td>
+            <td>{{i.customer.name}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.order.final_price}}</td>
+            <td>{{i.customer.phone_number}}</td>
+            <td>{{i.created_at}}</td>
+            <td><a href="/processTrue/{{i.id}}">Processing</a><br> <a href="/destroyOrder/{{i.id}}">Reject Order</a></td>
+          </tr>
+          {% endif %}
+          {%endfor%}
+        </tbody>
+      </table>
+      <div style="background-color: rgb(168, 168, 168); text-align: center; margin-top: 5px;">
+        <p style="font-size: 1.2rem;">Approved Table</p>
+      </div>
+      <div>
+    </div>
+   
+      <table class="table table-sm">
+    
+          <thead>
+            <tr>
+              <th scope="col">Process</th>
+              <th scope="col">Order</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total price</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Created_at</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+              {%for i in carts reversed%}
+              {% if i.order.process == True %}
+            <tr>
+              <!-- فيوتشر وورك : كل يوم يعمل رستارت للاي دي -->
+              <td>{{i.order.process}}</td>
+              <td>{{i.meal.name}}</td>
+              <td>{{i.customer.name}}</td>
+              <td>{{i.quantity}}</td>
+              <td>{{i.order.final_price}}</td>
+              <td>{{i.customer.phone_number}}</td>
+              <td>{{i.created_at}}</td>
+              <td><a href="/processTrue/{{i.id}}">UnProcessing</a><br> <a href="/destroyOrder/{{i.id}}">Done(Delete)</a></td>
+            </tr>
+            {% endif %}
+            {%endfor%}
+          </tbody>
+        </table>
+      
+     
+      
+</body>
+</html>

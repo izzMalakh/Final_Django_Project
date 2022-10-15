@@ -1,0 +1,372 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Vintage</title>
+
+<script src="{% static 'js/main.js' %}"></script>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/adminst.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.1.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+
+      <div class="contact-info d-flex align-items-center">
+        
+      </div>
+
+     
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a id="vin" href="index.html">VINTA<span id="g">G</span>E</a><span  class="font-effect-outline" style="font-family:'Sofia'; font-style: italic; color:red ;">Admin </span> </h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/showallUsers">Special Coustmers</a></li>
+          <li><a class="nav-link scrollto" href="/showallEmployees">Employees</a></li>
+          
+          <li><a class="nav-link scrollto" href="/showallOrders">Orders</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="/showReports">Reports</a></li>
+          <li><a class="nav-link scrollto" href="#">Jobs</a></li>
+          <li><a class="nav-link scrollto" href="/showallEmployees">Add Employee</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Events</a></li>
+          
+          <!-- <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">User</a></li> -->
+              
+
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul> -->
+                  <!-- <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li> -->
+                <!-- </ul> -->
+              <!-- </li> -->
+              <!-- <li><a href="#">User</a></li> -->
+              <!-- <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li> -->
+            <!-- </ul>
+          </li> -->
+          
+          
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="/" class="book-a-table-btn scrollto d-none d-lg-flex">Home Page</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero"  class="d-flex align-items-center" >
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome  <span style="font-size: 4rem;">{{request.session.admin}}</h1>
+            <br>
+            <h2>In this Dashboard You can Manage your Restaurant</h2>
+        
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Add to Menu</a>
+            <a href="/toEditMenu" class="btn-book animated fadeInUp scrollto">Edit Menu</a>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+
+    <!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <!-- <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Why Us</h2>
+          <p>Why Choose Our Restaurant</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+              <span>01</span>
+              <h4>Lorem Ipsum</h4>
+              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="200">
+              <span>02</span>
+              <h4>Repellat Nihil</h4>
+              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="300">
+              <span>03</span>
+              <h4> Ad ad velit qui</h4>
+              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Why Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Menu</h2>
+          <p>Add To Menu</p>
+        </div>
+        <section id="book-a-table" class="book-a-table">
+            <div class="container" data-aos="fade-up">
+      
+             
+                <!-- class="php-email-form"  -->
+              <form action="/admin/menu" enctype="multipart/form-data"  method="post" >
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" name="mealName" class="form-control" id="name" placeholder="Name"  >
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <select class="form-select" id="select" aria-label="Default select example" name="mealType" >
+                        <option value="none"> Select Type </option>
+                        <option value="hotdrinks">Hot Drinks</option>
+                        <option value="softdrinks">Soft Drinks</option>
+                        <option value="Sparklings">Sparklings</option>
+                        <option value="iced">Iced Drinks</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="milkshakes">Milkshakes</option>
+                        <option value="cocktails">Cocktails</option>
+                        <option value="freshJuice">freshJuice</option>
+                        <option value="breakfast">Morning and Brunch</option>
+                        <option value="Starter">Starters</option>
+                        <option value="salad">Salad</option>
+                        <option value="mainMeals">Main Course</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Sandwishes">Sandwishes</option>
+
+                      </select>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control"
+                     id="phone" placeholder="Price" name="price">
+                    <div class="validate"></div>
+                  </div>
+                 
+                </div>
+                <div class="form-group mt-3">
+                  <textarea style="margin-bottom: 10px;" class="form-control" name="description" rows="5" placeholder="description"></textarea>
+                  <div class="validate"></div>
+                </div>
+                Upload Meal Image:<input type="file" name="image" accept="image/*">
+                <div class="text-center" style="margin-top: 20px;"><button style="background-color: #cda45e; height: 50px; width: 70px; border-radius: 20px;"
+                     type="submit">Add</button></div>
+                     <div style="margin: 0 auto; width: 25%; margin-top: 10px; text-align: center;">
+                <a class="text-center" style="font-size: 1.1rem;" href="/">Back to home and see menu</a><br>
+                 <a class="text-center" style="margin-top: 20px; font-size: 1.3rem;" href="/toEditMenu">Edit Menu</a>
+                </div>
+              </form>
+            </div>
+      
+            {% if messages %}
+            {% for message in messages %}
+            
+            <p style="margin: 0 auto; width: 22%; margin-bottom: 10px; text-align: center;" {% if message.tags %} class="alert {{ message.tags }}" role="alert" {% endif %}>
+                {{ message }}
+            </p>
+            
+            {% endfor %}
+            {% endif %}
+          </section>
+          
+
+    <!-- End Specials Section -->
+
+    <!-- ======= Events Section ======= -->
+    <section id="" class="menu section-bg">
+      
+
+        <div class="section-title">
+          <h2>Events</h2>
+          <p>Organize Events in the Restaurant</p>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">persons</th>
+                <th scope="col">Date</th>
+                <th scope="col">Hours</th>
+                <th scope="col">occassion</th>
+                <th scope="col">Discription</th>
+                <th scope="col">Cost</th>
+                <th scope="col"></th>
+                <th scope="col">Actions</th>
+                <th scope="col"></th>
+                <th scope="col">Edit Estimated Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- make for loop here -->
+              {%for j in reservation %}
+              <tr>
+                <th scope="row"></th>
+                <td>{{j.customer.name}}</td>
+                <td>{{j.customer.phone_number}}</td>
+                <td>{{j.number_of_persons}}</td>
+                <td>{{j.date_time}}</td>
+                <td>{{j.number_of_hours}}</td>
+                <td>{{j.occassion}}</td>
+                <td><a href="/Showmessage/{{j.id}}">See More</a></td>
+                <td>{{j.cost}}</td>
+
+                <td><a href="/AcceptEvent/{{j.id}}">Accept</a> </td>
+                <td><a href="/RefucedEvent/{{j.id}}">Refused</a> </td>
+                <td><a href="/deleteEvent/{{j.id}}">Delete</a> </td>
+                <td>
+                  <form action="/EditEstimatedCost/{{j.id}}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="editcost">
+                    <button type="submit">Edit </button>
+                  </form>
+                 </td>
+                
+              </tr>
+             {%endfor%}
+            </tbody>
+          </table>
+        </div>
+</section>
+<!-- End Events Section -->
+
+    
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>What they're saying about Restaurant</p>
+        </div>
+        <table class="table table-striped table-dark">
+          <thead>
+            
+            <tr>
+              
+              <th scope="col"></th>
+              <th scope="col">Message</th>
+              <th scope="col">created_at</th>
+              <th scope="col"></th>
+              
+            </tr>
+            
+          </thead>
+          <tbody>
+            <!-- make for loop here -->
+            {%for i in reviews%}
+            <tr>
+
+              <th scope="row"></th>
+              <td>{{i.Message}}</td>
+              <td>{{i.created_at}}</td>
+             
+              <td><a href="/deletemessage/{{i.id}}">Delete</a> </td>
+            </tr>
+            {%endfor%}
+
+          </tbody>
+        </table>
+
+       
+           
+
+      </section>
+
+    <!-- ======= Chefs Section ======= -->
+    
+    <!-- End Chefs Section -->
+
+ 
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

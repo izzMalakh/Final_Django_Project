@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> showReservationDetails</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-image: linear-gradient(to right, #8c004b, #dcd8d8); 
+            padding: 30px;
+        }
+        #div1{
+            width: 40%;
+            background-color: antiquewhite;
+            margin: 0 auto;
+            margin-top: 70px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 0px 10px 0px;
+            
+        }
+        #div{
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 40%;
+            background-color: antiquewhite;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px 0px 10px 0px;
+        }
+       
+        .head{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+    <a href="/adminDashboard"> Back to the previous page </a>
+    <a href="/"> Back to Home As user </a>
+</div>
+    <div id="div1">
+    <h1> Send From: {{messid.customer.name}} </h1>
+    <h2> Phone Number: {{ messid.customer.phone_number }}</h2>
+    <h2> Email: {{ messid.customer.email }}</h2>
+    <h2> Address: {{ messid.customer.address }}</h2>
+    
+    
+    <h3> Reservation Message: {{messid.message}}</h3>
+    <h3> Number of Persons: {{messid.number_of_persons}}</h3>
+    <h3> Number of Hours: {{messid.number_of_hours}}</h3>
+    <h3> Occassion type: {{messid.occassion}}</h3>
+    <h3> Estimated Cost: {{messid.cost}} $</h3>
+    
+    <h3> Created at: {{messid.created_at}} </h3>
+    
+</div>
+<div id="div">
+<a href="#">Print Card</a> (Not Available Now)
+</div>
+</body>
+</html>
