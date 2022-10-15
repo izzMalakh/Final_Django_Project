@@ -7,7 +7,7 @@ For the management side we provided all in one. managing employees, menu, adding
 our application is simply all in one.For the admin we used all crud operations with customers , employees , events, and reviews. We provided reports for the admin to be able to evaluate their situation, see most ordered meals and their very loyal customers.
 For that we design a very precise data base and models to provide the best service can be from our team.
 we used many techniques to make our website interacts with the users; such as js  and js animations , vendor , colorful related design, and related images.*
-
+## Main Page
 ![home1.png](https://github.com/Marah-Ashayer/DjangoProject/blob/main/newVersionPYTHONproject-master/Img/home1.png?raw=true)
 
 ![home2.png](https://github.com/Marah-Ashayer/DjangoProject/blob/main/newVersionPYTHONproject-master/Img/home2.png?raw=true)
