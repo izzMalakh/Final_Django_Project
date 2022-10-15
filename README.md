@@ -3,7 +3,7 @@
 ## Supervised By : Amin Eid
 ## Abstraction
 *The purpose of this project is to unit the management and the customers and make easier communication and understanding, we made our website very interactive with the customer, provide marketing ideas to gain more loyalty from the customer.
-For the management side we provided all in one. managing employees, menu, adding and checking their loyal customer and help them to give them gifts, also we allowed the management to control the events created by the customers, menu , and see reviews from different user.
+For the management side we provided all in one. managing employees, menu, adding and checking their loyal customer and help them to give them gifts, also we allowed the management to control the events created by the customers, menu , and see reviews from different user.Also for we added some extras for special customers such as gifts, ability to make orders plan events and much more.
 our application is simply all in one.
 we used many techniques to make our website interacts with the users; such as js  and js animations , vendor , colorful related design, and related images.*
 
