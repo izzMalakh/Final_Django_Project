@@ -5,7 +5,8 @@
 *The purpose of this project is to unit the management and the customers and make easier communication and understanding, we made our website very interactive with the customer, provide marketing ideas to gain more loyalty from the customer.
 For the management side we provided all in one. managing employees, menu, adding and checking their loyal customer and help them to give them gifts, also we allowed the management to control the events created by the customers, menu , and see reviews from different user.Also for we added some extras for special customers such as gifts, ability to make orders plan events and much more.
 our application is simply all in one.For the admin we used all crud operations with customers , employees , events, and reviews. We provided reports for the admin to be able to evaluate their situation, see most ordered meals and their very loyal customers.
-For that we design a very precise data base and models to provide the best service can be from our team.
+For that we design a very precise data base and models to provide the best service can be from our team.we used django frame work with python for the back end side.
+as for the front end  and interactivity we designed it with html, css, bootsrap, javascript, animations with js.
 we used many techniques to make our website interacts with the users; such as js  and js animations , vendor , colorful related design, and related images.*
 ## Main Page
 ![home1.png](https://github.com/Marah-Ashayer/DjangoProject/blob/main/newVersionPYTHONproject-master/Img/home1.png?raw=true)
