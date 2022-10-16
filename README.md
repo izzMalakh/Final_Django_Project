@@ -1,7 +1,4 @@
 
-# **VINTAGE Restaurant** 
-## Made by Izzaldeen Malakh, Dana Alhaji, and Marah Ashayer
-## Supervised By : Amin Eid
 
 ﻿
 # **VINTAGE Restaurant** 
